@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Define o estilo do carousel */
+        .carousel {
+            display: flex;
+            position: relative;
+            width: 800px;
+            height: 400px;
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        /* Define o estilo da imagem */
+        .carousel img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* Define o estilo do botão de navegação */
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            font-size: 2em;
+            background: transparent;
+            border: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        /* Define o estilo do botão anterior */
+        .carousel .prev {
+            left: 0;
+            color: white;
+        }
+
+        /* Define o estilo do botão próximo */
+        .carousel .next {
+            right: 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="carousel">
+        <!-- Exibe a primeira imagem -->
+        <img src="imagens/pexels-alex-blokstra-1327373.jpg" alt="Imagem 1">
+        <img src="imagens/pexels-baskin-creative-studios-1576667.jpg" alt="Imagem 2">
+        <img src="imagens/pexels-james-wheeler-1619317.jpg" alt="Imagem 3">
+        <img src="imagens/pexels-nextvoyage-1476880.jpg" alt="Imagem 4">
+
+        <!-- Adiciona os botões de navegação -->
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+    </div>
+
+
+    <script>
+       // Obtém o elemento do carousel
+        var carousel = document.querySelector('.carousel');
+
+        // Obtém as imagens do carousel
+        var imagens = carousel.querySelectorAll('img');
+
+        // Define a imagem atual como a primeira imagem
+        var imagemAtual = 0;
+
+        // Exibe a imagem atual
+        function exibirImagemAtual() {
+        for (var i = 0; i < imagens.length; i++) {
+            imagens[i].style.display = "none";
+        }
+        imagens[imagemAtual].style.display = "block";
+        }
+
+        // Exibe a próxima imagem
+        function proximaImagem() {
+        imagemAtual++;
+        if (imagemAtual >= imagens.length) {
+            imagemAtual = 0;
+        }
+        exibirImagemAtual();
+        }
+
+        // Exibe a imagem anterior
+        function imagemAnterior() {
+        imagemAtual--;
+        if (imagemAtual < 0) {
+            imagemAtual = imagens.length - 1;
+        }
+        exibirImagemAtual();
+        }
+
+        // Adiciona os eventos de clique nos botões de navegação
+        carousel.querySelector('.prev').addEventListener('click', imagemAnterior);
+        carousel.querySelector('.next').addEventListener('click', proximaImagem);
+
+        // Exibe a primeira imagem
+        exibirImagemAtual();
+
+    </script>
+</body>
+</html>

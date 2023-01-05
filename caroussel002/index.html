@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+        }
+
+
+        button#btnPrev {
+            order: -1;
+            background-color: transparent;
+            color: blue;
+            font-size: 5em;
+            cursor: pointer;
+            border: none;
+        }
+
+        button#btnNext {
+            background-color: transparent;
+            color: blue;
+            font-size: 5em;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel">
+        <img src="imagens/pexels-alex-blokstra-1327373.jpg" alt="">
+        <img src="imagens/pexels-baskin-creative-studios-1576667.jpg" alt="">
+        <img src="imagens/pexels-james-wheeler-1619317.jpg" alt="">
+        <img src="imagens/pexels-nextvoyage-1476880.jpg" alt="">
+
+        <button class="btnNavegation" id="btnPrev">&lt;</button>
+        <button class="btnNavegation" id="btnNext">&gt;</button>
+    </div>
+
+    <script>
+        let carousel = document.querySelector('div#carousel')
+        let imagens = document.querySelectorAll('img')
+        let btnNext = document.querySelector('button#btnNext')
+        let btnPrev = document.querySelector('button#btnPrev')
+        let imagemAtual = 0
+        
+        function exibirImagenAtual () {
+            for(let i = 0; i < imagens.length; i++) {
+                imagens[i].style.display = 'none'
+            }
+            imagens[imagemAtual].style.display = 'block'
+        }
+
+        btnNext.onclick = function () {
+            imagemAtual++
+            if(imagemAtual == imagens.length) {
+                imagemAtual = 0
+            }
+
+            exibirImagenAtual()
+        }
+
+        btnPrev.onclick = function () {
+            imagemAtual--
+            if(imagemAtual < 0) {
+                imagemAtual = imagens.length - 1
+            }
+            
+
+            exibirImagenAtual()
+        }
+
+
+        exibirImagenAtual()
+    </script>
+
+</body>
+</html>

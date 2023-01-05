@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 640px;
+}
+
+img {
+    width: 100%;
+}

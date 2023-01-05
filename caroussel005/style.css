@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 640px;
+}
+
+button {
+    position: absolute;
+    font-size: xx-large;
+    background-color: #e5e5e54e;
+    border: none;
+    border-radius: 15%;
+    cursor: pointer;
+    color: white;
+}
+
+button#next {
+    right: 0%;
+}
+
+img {
+    width: 100%;
+}
