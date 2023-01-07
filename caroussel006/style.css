@@ -5,43 +5,41 @@
     padding: 0;
 }
 
-body {
-    height: 100vh;
+div.sliderContainer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-div#carousel {
-    display: flex;
-    align-items: center;
+div#caroussel {
     position: relative;
-    max-width: 640px;
 }
 
-div#carousel > button {
+div#caroussel > button#prev {
     position: absolute;
+    top: 50%;
+    left: 0;
+    margin-left: 10px;
     font-size: xx-large;
-    background-color: #e5e5e54e;
+    background-color: transparent;
     border: none;
-    border-radius: 15%;
-    cursor: pointer;
     color: white;
 }
 
-div#carousel > button#next {
-    right: 0%;
-}
-
-#indicadores {
+div#caroussel > button#next {
     position: absolute;
-    top: 90%;
-    left: 50%;
-
-    transform: translate(-50%);
+    top: 50%;
+    right: 0;
+    margin-right: 10px;
+    font-size: xx-large;
+    background-color: transparent;
+    border: none;
+    color: white;
 }
 
-
-img {
-    width: 100%;
+div.sliderContainer > #containerIndicators {
+    position: absolute;
+    margin-bottom: 1%;
+    align-self: flex-end;
+    
 }
